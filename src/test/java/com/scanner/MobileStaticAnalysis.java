@@ -64,6 +64,7 @@ public class MobileStaticAnalysis {
             }
         }
         driver.manage().window().maximize();
+        driver.quit();
     }
 
 }
