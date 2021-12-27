@@ -10,7 +10,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 public class MobileStaticAnalysis {
     private WebDriver driver;
@@ -24,6 +26,17 @@ public class MobileStaticAnalysis {
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         options.addArguments("--incognito");
+        options.setHeadless(false);
+
+        //https://stackoverflow.com/questions/47685618/unable-to-download-pdf-file-in-chrome-browser-using-selenium-java
+        Map<String, Object> preferences = new Hashtable<String, Object>();
+        preferences.put("plugins.always_open_pdf_externally", true);
+        options.setExperimentalOption("prefs", preferences);
+
+        // disable flash and the PDF viewer
+        preferences.put("plugins.plugins_disabled", new String[]{
+                "Chrome PDF Viewer"
+        });
         driver = new ChromeDriver(options);
         try {
             driver.get(url);
