@@ -19,12 +19,12 @@ Then open your browser and navigate to http://localhost:8000/
 ## How to Run Mobile Static Analysis with Selenium
 ```
 i.e Android Installer (.apk)
-$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DapkName="security-dashboard.apk"
+$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="security-dashboard.apk"
 ```
 
 ```
 i.e iOS installer (.ipa)
-$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DapkName="security-dashboard.ipa"
+$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="security-dashboard.ipa"
 ```
 
 ## References

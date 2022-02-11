@@ -17,7 +17,7 @@ import java.util.Map;
 public class MobileStaticAnalysis {
     private WebDriver driver;
     String path = System.getProperty("path");
-    String apkName = System.getProperty("apkName");
+    String buildName = System.getProperty("buildName");
     String url = System.getProperty("url");
 
     @Test
@@ -26,7 +26,7 @@ public class MobileStaticAnalysis {
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         options.addArguments("--incognito");
-        options.setHeadless(false);
+        options.setHeadless(true);
 
         //https://stackoverflow.com/questions/47685618/unable-to-download-pdf-file-in-chrome-browser-using-selenium-java
         Map<String, Object> preferences = new Hashtable<String, Object>();
@@ -41,7 +41,7 @@ public class MobileStaticAnalysis {
         try {
             driver.get(url);
             WebElement el = driver.findElement(By.id("uploadFile"));
-            el.sendKeys(path + apkName);
+            el.sendKeys(path + buildName);
         } catch (NoSuchElementException e) {
             Assert.fail("Unable to import .apk/.ipa file, Please check if your application is running or Internet connection is up!");
         }
@@ -57,14 +57,14 @@ public class MobileStaticAnalysis {
         int count = rows.size();
         for (int i = 1; i < count; i++) {
             WebElement fileName = driver.findElement(By.cssSelector("tr:nth-child(" + i + ") > td:nth-child(2)"));
-            if (fileName.getText().equals(apkName)) {
+            if (fileName.getText().equals(buildName)) {
                 WebElement pdfBtn = driver.findElement(By.xpath("//tr[" + i + "]//a[2]"));
                 pdfBtn.click();
                 break;
             }
         }
         driver.manage().window().maximize();
-//        driver.quit();
+        driver.quit();
     }
 
 }
