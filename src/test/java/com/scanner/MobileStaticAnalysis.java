@@ -1,5 +1,6 @@
 package com.scanner;
 
+import com.scanner.Utils.SendMobSFReportByEmail;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MobileStaticAnalysis {
+
     private WebDriver driver;
     String path = System.getProperty("path");
     String buildName = System.getProperty("buildName");
@@ -65,6 +67,7 @@ public class MobileStaticAnalysis {
         }
         driver.manage().window().maximize();
         driver.quit();
+        SendMobSFReportByEmail.sendSecurityBuildReportByEmail();
     }
 
 }
