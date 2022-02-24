@@ -19,7 +19,7 @@ public class MobileStaticAnalysis {
 
     private WebDriver driver;
     String path = System.getProperty("path");
-    String buildName = System.getProperty("buildName");
+    public static String buildName = System.getProperty("buildName");
     String url = System.getProperty("url");
 
     @Test

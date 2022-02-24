@@ -10,6 +10,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
 
+import static com.scanner.MobileStaticAnalysis.buildName;
 import static com.scanner.Utils.AuthConstants.*;
 import static com.scanner.Utils.LoadProperties.authenticationProps;
 
@@ -45,11 +46,11 @@ public class SendMobSFReportByEmail {
             message.setFrom(new InternetAddress(FROM));
             // Set the recipient address
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECIPIENT_1));//To
-            message.setSubject("MobSF Build Security Test Report");
+            message.setSubject("MobSF "+ buildName + " Build Security Test Report");
 
             // Create object to add multimedia type content
             BodyPart messageBodyPart1 = new MimeBodyPart();
-            String messageBody = "Kindly have a look at the latest security build test report attached.";
+            String messageBody = "Kindly have a look at the latest security build test report attached for "+ buildName;
             String htmlText = "<font size =\"4\" face=\"arial\" >Dear all,</font>" + "<br><br>" + "<font size =\"4\" face=\"arial\" >" + messageBody + "</font>" + "</font>" + "<br><br>" + "<font size =\"4\" face=\"arial\" >Best Regards,</font>";
             messageBodyPart1.setContent(htmlText, "text/html");
 
