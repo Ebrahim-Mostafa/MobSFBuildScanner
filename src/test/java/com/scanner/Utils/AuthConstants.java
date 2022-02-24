@@ -2,6 +2,7 @@ package com.scanner.Utils;
 
 import java.io.File;
 
+import static com.scanner.MobileStaticAnalysis.buildName;
 import static com.scanner.Utils.LoadProperties.authenticationProps;
 
 public class AuthConstants {
@@ -17,5 +18,6 @@ public class AuthConstants {
     public static String RECIPIENT_1 = authenticationProps.getProperty("Recipient_1");
     public static String RECIPIENT_2 = authenticationProps.getProperty("Recipient_2");
     public static String RECIPIENT_3 = authenticationProps.getProperty("Recipient_3");
-    public static String BUILD_SEC_REPORT= System.getProperty("user.dir")+ File.separator+"Download.pdf";
+    public static String BUILD_SEC_REPORT= System.getProperty("user.dir")+ File.separator + "Download.pdf";
+    public static String EMAIL_BUILD_SEC_REPORT= System.getProperty("user.dir")+ File.separator + buildName +".pdf";
 }

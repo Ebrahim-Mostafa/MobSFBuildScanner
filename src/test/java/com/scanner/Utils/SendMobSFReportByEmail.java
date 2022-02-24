@@ -61,7 +61,7 @@ public class SendMobSFReportByEmail {
             // Create another object to add another content
             MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 
-            String fileLocation = BUILD_SEC_REPORT;
+            String fileLocation = EMAIL_BUILD_SEC_REPORT;
 
             // Create data source and pass the filename
             DataSource source = new FileDataSource(fileLocation);
