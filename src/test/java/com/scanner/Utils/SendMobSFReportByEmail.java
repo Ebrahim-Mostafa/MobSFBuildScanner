@@ -9,6 +9,10 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 import static com.scanner.MobileStaticAnalysis.buildName;
 import static com.scanner.Utils.AuthConstants.*;
@@ -90,6 +94,20 @@ public class SendMobSFReportByEmail {
 
             throw new RuntimeException(e);
 
+        }
+    }
+
+    public static void renameReportFile(){
+        Path source = Paths.get(BUILD_SEC_REPORT);
+
+        try{
+
+            // rename a file in the same directory
+            Files.move(source, source.resolveSibling(buildName+".pdf"),
+                    StandardCopyOption.REPLACE_EXISTING);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
