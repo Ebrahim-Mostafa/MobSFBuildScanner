@@ -73,8 +73,8 @@ public class MobileStaticAnalysis {
     @AfterTest
     public void tearDown(){
         driver.quit();
-//        SendMobSFReportByEmail.renameReportFile();
-//        SendMobSFReportByEmail.sendSecurityBuildReportByEmail();
+        SendMobSFReportByEmail.renameReportFile();
+        SendMobSFReportByEmail.sendSecurityBuildReportByEmail();
     }
 
 }
