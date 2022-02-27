@@ -40,6 +40,7 @@ $ gradle clean test -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downl
 ```
 
 ## References
+-[Mobile Security Framework (MobSF) Static Analysis](https://medium.com/@kshitishirke/mobile-security-framework-mobsf-static-analysis-df22fcdae46e)
 - [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
 - [Automate Using Selenium](https://www.selenium.dev/)
 - [Docker Desktop Download](https://www.docker.com/products/docker-desktop)
