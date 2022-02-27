@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class MobileStaticAnalysis {
     public static String buildName = System.getProperty("buildName");
     String url = System.getProperty("url");
 
-    @Test
+    @Test(alwaysRun = true)
     public void runScanner() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -66,9 +67,14 @@ public class MobileStaticAnalysis {
             }
         }
         driver.manage().window().maximize();
+
+    }
+
+    @AfterTest
+    public void tearDown(){
         driver.quit();
-        SendMobSFReportByEmail.renameReportFile();
-        SendMobSFReportByEmail.sendSecurityBuildReportByEmail();
+//        SendMobSFReportByEmail.renameReportFile();
+//        SendMobSFReportByEmail.sendSecurityBuildReportByEmail();
     }
 
 }

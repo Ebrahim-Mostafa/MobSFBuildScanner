@@ -3,7 +3,7 @@
 
 
 # SeleniumMobSFBuildScanner
-Selenium and Mobile Security Framework (MobSF) Integration to make Continuous Static Analysis possible.
+Selenium and Mobile Security Framework (MobSF) Integration to make Continuous Static Build Analysis possible.
 
 ## How to install MobSF in Docker
 ```
@@ -16,17 +16,33 @@ $ docker-compose up -d
 Then open your browser and navigate to http://localhost:8000/
 ```
 
-## How to Run Mobile Static Analysis with Selenium
+## How to Run Mobile Static Analysis with Maven
 ```
 i.e Android Installer (.apk)
-$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="security-dashboard.apk"
+$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="Security-Build.apk"
 ```
 
 ```
 i.e iOS installer (.ipa)
-$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="security-dashboard.ipa"
+$ mvn clean test -Dtest=MobileStaticAnalysis -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="Security-Build.ipa"
+```
+
+## How to Run Mobile Static Analysis with Gradle
+```
+i.e Android Installer (.apk)
+$ gradle clean test -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="Security-Build.apk"
+```
+
+```
+i.e iOS installer (.ipa)
+$ gradle clean test -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downloads/" -DbuildName="Security-Build.ipa"
+
 ```
 
 ## References
-- https://github.com/MobSF/Mobile-Security-Framework-MobSF
-- https://www.selenium.dev/
+- [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF)
+- [Automate Using Selenium](https://www.selenium.dev/)
+- [Docker Desktop Download](https://www.docker.com/products/docker-desktop)
+- [GRADLE: TestNg - unable to pass -D parameter to java code](https://stackoverflow.com/questions/32815090/gradle-testng-unable-to-pass-d-parameter-to-java-code)
+- [Pass parameters to gradle Java Demo](https://github.com/Opalo/stackoverflow/tree/master/32815090)
+- [MobSF Docker Options](https://mobsf.github.io/docs/#/docker)
