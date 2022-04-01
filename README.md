@@ -47,3 +47,5 @@ $ gradle clean test -Durl="http://localhost:8000/" -Dpath="/Users/imostafa/Downl
 - [GRADLE: TestNg - unable to pass -D parameter to java code](https://stackoverflow.com/questions/32815090/gradle-testng-unable-to-pass-d-parameter-to-java-code)
 - [Pass parameters to gradle Java Demo](https://github.com/Opalo/stackoverflow/tree/master/32815090)
 - [MobSF Docker Options](https://mobsf.github.io/docs/#/docker)
+- [Gradle – Convert Maven Project to Gradle Project](https://howtodoinjava.com/gradle/convert-maven-project-to-gradle-project/)
+- [Convert Maven project to Gradle project](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)
